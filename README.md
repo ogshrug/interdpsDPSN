@@ -39,7 +39,6 @@ KrishiMitra serves as a digital assistant for Indian farmers, providing tools an
 ├── style.css         # Styling for the website
 ├── scripts.js        # JavaScript logic and interactivity
 └── assets/           # Images, graphs, and other media
-<<<<<<< HEAD
 ```
 
 ---
@@ -77,5 +76,3 @@ For feedback, contributions, or queries:
 ---
 
 > *“Let’s bridge the gap between tradition and technology in agriculture.” – Team KrishiMitra*
-=======
->>>>>>> 7c85819676c7994e0ad75e54dd912d2ac4ae51f7
