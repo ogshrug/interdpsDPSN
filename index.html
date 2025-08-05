@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiMitra - Farmer's Decision Support System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/api-mock.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/maps.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places,visualization&callback=initMap" async defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen overflow-x-hidden">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md px-4 py-3 sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://placehold.co/40x40" alt="KrishiMitra logo - green leaf with digital circuit pattern overlay" class="mr-3 h-10">
+                <h1 class="text-xl font-bold text-gray-800">KrishiMitra</h1>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button class="md:hidden flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="./index.html" class="nav-item text-gray-700 font-medium py-2 active">Dashboard</a>
+                <a href="./soil-analysis.html" class="nav-item text-gray-700 font-medium py-2">Soil Analysis</a>
+                <a href="./weather.html" class="nav-item text-gray-700 font-medium py-2">Weather</a>
+                <a href="./crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2">Crop Suggestions</a>
+                <a href="./market-prices.html" class="nav-item text-gray-700 font-medium py-2">Market Prices</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="language-selector">
+                    <button class="flex items-center text-gray-700">
+                        <span class="mr-1">English</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50 hidden">
+                        <div class="p-2 max-h-60 overflow-y-auto custom-scrollbar">
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">हिंदी (Hindi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">বাংলা (Bengali)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">தமிழ் (Tamil)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">తెలుగు (Telugu)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">मराठी (Marathi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">اردو (Urdu)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">ગુજરાતી (Gujarati)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">ಕನ್ನಡ (Kannada)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">മലയാളം (Malayalam)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">ଓଡ଼ିଆ (Odia)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">ਪੰਜਾਬੀ (Punjabi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">অসমীয়া (Assamese)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">मैथिली (Maithili)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">संथाली (Santali)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">कश्मीरी (Kashmiri)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">नेपाली (Nepali)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">कोंकणी (Konkani)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">मणिपुरी (Manipuri)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">बोडो (Bodo)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">डोगरी (Dogri)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">सिंधी (Sindhi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">संस्कृत (Sanskrit)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                    Connect NitroBit
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Alert Banner -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg flex items-start alert-critical">
+            <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm text-yellow-700">
+                    <strong>CRITICAL ALERT:</strong> NitroBit sensor in Field #2 detects low soil moisture (32%). Consider irrigation within 24 hours to prevent crop stress.
+                </p>
+            </div>
+            <button class="ml-auto text-yellow-500 hover:text-yellow-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Main Map Section -->
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-md overflow-hidden gradient-bg">
+                <div class="p-4 border-b border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-lg font-semibold text-gray-800">Field Conditions Map</h2>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium hover:bg-green-700">Soil Health</button>
+                            <button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200">Moisture</button>
+                            <button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200">Temperature</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-96 w-full relative">
+                    <div id="map" class="h-full w-full map-container"></div>
+                    <div class="absolute bottom-4 left-4 bg-white p-2 rounded-md shadow-sm">
+                        <div class="flex items-center">
+                            <div class="h-4 w-4 rounded-full bg-green-500 mr-2"></div>
+                            <span class="text-xs">Optimal</span>
+                        </div>
+                        <div class="flex items-center mt-1">
+                            <div class="h-4 w-4 rounded-full bg-yellow-500 mr-2"></div>
+                            <span class="text-xs">Moderate</span>
+                        </div>
+                        <div class="flex items-center mt-1">
+                            <div class="h-4 w-4 rounded-full bg-red-500 mr-2"></div>
+                            <span class="text-xs">Critical</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats Column -->
+            <div class="space-y-6">
+                <!-- NitroBit Status -->
+                <div class="dashboard-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-4 border-b border-gray-200 bg-blue-50">
+                        <h2 class="text-lg font-semibold text-gray-800">NitroBit Status</h2>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <div class="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Device ID</p>
+                                <p class="font-medium">NB-4852-2023</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-center">
+                            <div>
+                                <div class="text-xs text-gray-500">Battery</div>
+                                <div class="text-green-600 font-medium">84%</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500">Signal</div>
+                                <div class="text-green-600 font-medium">Strong</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500">Last Sync</div>
+                                <div class="font-medium">2h ago</div>
+                            </div>
+                        </div>
+                        <div class="mt-3 pt-3 border-t border-gray-100">
+                            <div class="text-xs text-gray-500 mb-1">Sensor Status</div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="flex items-center">
+                                    <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+                                    <span class="text-xs">Temperature</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+                                    <span class="text-xs">Humidity</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+                                    <span class="text-xs">pH Level</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
+                                    <span class="text-xs">Nitrogen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Recommendations -->
+                <div class="dashboard-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-4 border-b border-gray-200 bg-green-50">
+                        <h2 class="text-lg font-semibold text-gray-800">AI Recommendations</h2>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start mb-3">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="h-3 w-3 rounded-full bg-green-400"></div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm">
+                                    <span class="font-medium">Planting Suggestion:</span> Based on current soil pH and moisture levels, maize would be ideal for Field #1 with estimated yield increase of 18%.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-3">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="h-3 w-3 rounded-full bg-yellow-400"></div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm">
+                                    <span class="font-medium">Fertilizer Adjustment:</span> Nitrogen levels are approaching upper threshold in Field #2. Reduce urea application by 20%.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-3">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="h-3 w-3 rounded-full bg-blue-400"></div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm">
+                                    <span class="font-medium">Weather Alert:</span> Heavy rain predicted in 3 days. Delay irrigation and prepare for possible drainage issues.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="h-3 w-3 rounded-full bg-purple-400"></div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm">
+                                    <span class="font-medium">Market Insight:</span> Tomato prices expected to rise 15% next month. Consider accelerating harvest if crops are ready.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
+                            View All Recommendations
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Critical Parameters -->
+                <div class="dashboard-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-4 border-b border-gray-200 bg-red-50">
+                        <h2 class="text-lg font-semibold text-gray-800">Critical Parameters</h2>
+                    </div>
+                    <div class="p-4">
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Soil Moisture: Field #2</span>
+                                    <span class="font-medium text-red-600">32%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-red-500 h-2 rounded-full" style="width: 32%"></div>
+                                </div>
+                                <p class="text-xs text-red-500 mt-1">Optimal: 45-70%</p>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>pH Level: Field #1</span>
+                                    <span class="font-medium text-yellow-600">5.1</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-yellow-400 h-2 rounded-full" style="width: 63%"></div>
+                                </div>
+                                <p class="text-xs text-yellow-500 mt-1">Optimal: 5.8-6.5</p>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Nitrogen: Field #3</span>
+                                    <span class="font-medium text-blue-600">280 ppm</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <p class="text-xs text-blue-500 mt-1">Optimal: 150-250 ppm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Visualization Section -->
+        <div class="mt-8 bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-4 border-b border-gray-200">
+                <h2 class="text-lg font-semibold text-gray-800">Field Data Analysis</h2>
+            </div>
+            <div class="p-4">
+                <div class="flex flex-wrap gap-4 mb-4">
+                    <button class="px-4 py-2 bg-green-600 text-white rounded-md text-sm font-medium">Soil Health</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200">Moisture</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200">Nutrients</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200">Temperature</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200">7 Days</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200">30 Days</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200">Compare Fields</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <canvas id="soilChart" height="300"></canvas>
+                    </div>
+                    <div>
+                        <canvas id="moistureChart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Field Reports Section -->
+        <div class="mt-8 bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-4 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    
+                    <h2 class="text-lg font-semibold text-gray-800">Field Reports</h2>
+                    <a href="./soil-analysis.html" >
+                        <button href="./soil-analysis.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Generate Report
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Field</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Soil Health</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Moisture</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nutrients</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                            <span class="text-green-800 font-medium">1</span>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">North Field</div>
+                                            <div class="text-sm text-gray-500">2.5 acres</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-green-500 rounded-full" style="width: 72%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">72%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-yellow-500 rounded-full" style="width: 58%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">58%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-blue-500 rounded-full" style="width: 84%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">84%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-green-600 hover:text-green-900 mr-3">View</button>
+                                    <button class="text-blue-600 hover:text-blue-900">Analyze</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
+                                            <span class="text-yellow-800 font-medium">2</span>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">South Field</div>
+                                            <div class="text-sm text-gray-500">3.2 acres</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-green-500 rounded-full" style="width: 65%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">65%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-red-500 rounded-full" style="width: 32%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">32%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-blue-500 rounded-full" style="width: 68%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">68%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-green-600 hover:text-green-900 mr-3">View</button>
+                                    <button class="text-blue-600 hover:text-blue-900">Analyze</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                            <span class="text-blue-800 font-medium">3</span>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">East Field</div>
+                                            <div class="text-sm text-gray-500">1.8 acres</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-green-500 rounded-full" style="width: 78%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">78%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-yellow-500 rounded-full" style="width: 45%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">45%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-2 w-24 bg-gray-200 rounded-full mr-2">
+                                            <div class="h-2 bg-blue-500 rounded-full" style="width: 91%"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-900">91%</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-green-600 hover:text-green-900 mr-3">View</button>
+                                    <button class="text-blue-600 hover:text-blue-900">Analyze</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">KrishiMitra</h3>
+                    <p class="text-gray-400 text-sm">Empowering farmers with data-driven agriculture for a sustainable future.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Dashboard</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Soil Analysis</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Crop Suggestions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Market Prices</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Feedback</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.232-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H11v7H9v-7H7v-2h2V8.231C9 6.775 9.923 6 11.538 6H13v2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.344 7.749a2.988 2.988 0 0 1 2.134 2.134c.178.818.178 1.665.178 2.523 0 .858 0 1.705-.178 2.523a2.988 2.988 0 0 1-2.134 2.134c-.818.178-1.665.178-2.523.178h-7.641c-.858 0-1.705 0-2.523-.178a2.988 2.988 0 0 1-2.134-2.134c-.178-.818-.178-1.665-.178-2.523 0-.858 0-1.705.178-2.523a2.988 2.988 0 0 1 2.134-2.134c.818-.178 1.665-.178 2.523-.178h7.641c.858 0 1.705 0 2.523.178zm-6.344 8.249c1.239 0 2.244-1.006 2.244-2.246S13.239 11.507 12 11.507s-2.244 1.005-2.244 2.246S10.761 16 12 16zm4.368-7.587a1.282 1.282 0 0 1 .734-1.281 1.3 1.3 0 0 1 1.421.15c.28.22.44.54.435.877a1.3 1.3 0 0 1-.435.874 1.287 1.287 0 0 1-.874.435 1.3 1.3 0 0 1-1.281-.734c-.107-.211-.162-.446-.162-.688 0-.243.055-.476.162-.684z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
