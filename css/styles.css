@@ -103,11 +103,30 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    .mobile-menu {
-        display: block;
+    .mobile-menu-active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 75%;
+        height: 100%;
+        background-color: white;
+        z-index: 100;
+        padding: 1.5rem;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
     }
-    .desktop-menu {
-        display: none;
+
+    .mobile-menu-active.hidden {
+        transform: translateX(100%);
+    }
+
+    .mobile-menu-active .nav-item {
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #f3f4f6;
+        padding-bottom: 0.5rem;
     }
 }
 

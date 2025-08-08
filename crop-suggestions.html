@@ -20,40 +20,19 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button class="md:hidden flex items-center">
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
 
-            <nav class="hidden md:flex items-center space-x-8">
+            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="nav-item text-gray-700 font-medium py-2">Dashboard</a>
                 <a href="soil-analysis.html" class="nav-item text-gray-700 font-medium py-2">Soil Analysis</a>
                 <a href="weather.html" class="nav-item text-gray-700 font-medium py-2">Weather</a>
                 <a href="crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2 active">Crop Suggestions</a>
                 <a href="market-prices.html" class="nav-item text-gray-700 font-medium py-2">Market Prices</a>
             </nav>
-
-            <div class="flex items-center space-x-4">
-                <div class="language-selector">
-                    <button class="flex items-center text-gray-700">
-                        <span class="mr-1">English</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="language-dropdown absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50 hidden">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी (Hindi)</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="te">తెలుగు (Telugu)</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="ta">தமிழ் (Tamil)</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="kn">ಕನ್ನಡ (Kannada)</a>
-                    </div>
-                </div>
-                <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-md text-sm font-medium transition-colors">
-                    Connect NitroBit
-                </button>
-            </div>
         </div>
     </header>
 
@@ -214,7 +193,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
     <script>
         // Crop suggestions data loading script
         document.addEventListener('DOMContentLoaded', function() {
