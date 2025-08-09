@@ -5,42 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soil Analysis - KrishiMitra</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/translations.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="min-h-screen overflow-x-hidden">
-    <!-- Header/Navigation (same as index.html but with Soil Analysis active) -->
+    <!-- Header/Navigation -->
     <header class="bg-white shadow-md px-4 py-3 sticky top-0 z-50">
-        <!-- ... similar to index.html with Soil Analysis active ... -->
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://placehold.co/40x40" alt="KrishiMitra logo - green leaf with digital circuit pattern overlay" class="mr-3 h-10">
+                <h1 class="text-xl font-bold text-gray-800">KrishiMitra</h1>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8 mobile-menu-active">
+                <a href="index.html" class="nav-item text-gray-700 font-medium py-2">Dashboard</a>
+                <a href="soil-analysis.html" class="nav-item text-gray-700 font-medium py-2 active">Soil Analysis</a>
+                <a href="weather.html" class="nav-item text-gray-700 font-medium py-2">Weather</a>
+                <a href="crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2">Crop Suggestions</a>
+                <a href="market-prices.html" class="nav-item text-gray-700 font-medium py-2">Market Prices</a>
+            </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
-        <h1 class="text-2xl font-bold mb-6">Soil Analysis</h1>
+        <h1 class="text-2xl font-bold mb-6" data-translate="Soil Analysis">Soil Analysis</h1>
         
         <!-- Soil Analysis Content -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden p-6">
-            <h2 class="text-xl font-semibold mb-4">Comprehensive Soil Analysis</h2>
-            <p class="mb-4">Upload soil test results or connect your NitroBit sensor for real-time analysis.</p>
+            <h2 class="text-xl font-semibold mb-4" data-translate="Comprehensive Soil Analysis">Comprehensive Soil Analysis</h2>
+            <p class="mb-4" data-translate="Upload soil test results or connect your NitroBit sensor for real-time analysis.">Upload soil test results or connect your NitroBit sensor for real-time analysis.</p>
             
             <!-- Upload Section -->
             <div class="mb-6 p-4 border border-dashed border-gray-300 rounded-lg text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                 </svg>
-                <p class="text-sm text-gray-500 mb-2">Drag and drop soil test results or</p>
-                <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Browse Files</button>
+                <p class="text-sm text-gray-500 mb-2" data-translate="Drag and drop soil test results or">Drag and drop soil test results or</p>
+                <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-translate="Browse Files">Browse Files</button>
             </div>
             
             <!-- Sample Results -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-medium mb-2">Macronutrients</h3>
+                    <h3 class="font-medium mb-2" data-translate="Macronutrients">Macronutrients</h3>
                     <div class="space-y-2">
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Nitrogen (N)</span>
+                                <span data-translate="Nitrogen (N)">Nitrogen (N)</span>
                                 <span class="font-medium">180 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -49,7 +70,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Phosphorus (P)</span>
+                                <span data-translate="Phosphorus (P)">Phosphorus (P)</span>
                                 <span class="font-medium">45 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -58,7 +79,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Potassium (K)</span>
+                                <span data-translate="Potassium (K)">Potassium (K)</span>
                                 <span class="font-medium">210 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -69,11 +90,11 @@
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-medium mb-2">Micronutrients</h3>
+                    <h3 class="font-medium mb-2" data-translate="Micronutrients">Micronutrients</h3>
                     <div class="space-y-2">
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Iron (Fe)</span>
+                                <span data-translate="Iron (Fe)">Iron (Fe)</span>
                                 <span class="font-medium">12 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -82,7 +103,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Zinc (Zn)</span>
+                                <span data-translate="Zinc (Zn)">Zinc (Zn)</span>
                                 <span class="font-medium">1.2 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -91,7 +112,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Manganese (Mn)</span>
+                                <span data-translate="Manganese (Mn)">Manganese (Mn)</span>
                                 <span class="font-medium">8 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -102,11 +123,11 @@
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-medium mb-2">Physical Properties</h3>
+                    <h3 class="font-medium mb-2" data-translate="Physical Properties">Physical Properties</h3>
                     <div class="space-y-2">
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>pH Level</span>
+                                <span data-translate="pH Level">pH Level</span>
                                 <span class="font-medium">6.2</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -115,7 +136,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Organic Matter</span>
+                                <span data-translate="Organic Matter">Organic Matter</span>
                                 <span class="font-medium">3.5%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -124,7 +145,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Cation Exchange</span>
+                                <span data-translate="Cation Exchange">Cation Exchange</span>
                                 <span class="font-medium">12 meq/100g</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -137,26 +158,71 @@
             
             <!-- Recommendations -->
             <div class="mt-8">
-                <h3 class="text-lg font-semibold mb-3">AI-Powered Recommendations</h3>
+                <h3 class="text-lg font-semibold mb-3" data-translate="AI-Powered Recommendations">AI-Powered Recommendations</h3>
                 <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-                    <p class="text-sm">Based on your soil analysis, we recommend:</p>
+                    <p class="text-sm" data-translate="Based on your soil analysis, we recommend:">Based on your soil analysis, we recommend:</p>
                     <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
-                        <li>Apply zinc sulfate at 25 kg/ha to address zinc deficiency</li>
-                        <li>Consider adding organic matter to improve soil structure</li>
-                        <li>Maintain current nitrogen levels which are optimal for most crops</li>
-                        <li>Monitor manganese levels during the growing season</li>
+                        <li data-translate="Apply zinc sulfate at 25 kg/ha to address zinc deficiency">Apply zinc sulfate at 25 kg/ha to address zinc deficiency</li>
+                        <li data-translate="Consider adding organic matter to improve soil structure">Consider adding organic matter to improve soil structure</li>
+                        <li data-translate="Maintain current nitrogen levels which are optimal for most crops">Maintain current nitrogen levels which are optimal for most crops</li>
+                        <li data-translate="Monitor manganese levels during the growing season">Monitor manganese levels during the growing season</li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 mt-12">
-        <!-- ... same as index.html ... -->
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">KrishiMitra</h3>
+                    <p class="text-gray-400 text-sm">Empowering farmers with data-driven agriculture for a sustainable future.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="./index.html" class="text-gray-400 hover:text-white transition-colors">Dashboard</a></li>
+                        <li><a href="./soil-analysis.html" class="text-gray-400 hover:text-white transition-colors">Soil Analysis</a></li>
+                        <li><a href="./crop-suggestions.html" class="text-gray-400 hover:text-white transition-colors">Crop Suggestions</a></li>
+                        <li><a href="./market-prices.html" class="text-gray-400 hover:text-white transition-colors">Market Prices</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Feedback</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.232-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H11v7H9v-7H7v-2h2V8.231C9 6.775 9.923 6 11.538 6H13v2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.344 7.749a2.988 2.988 0 0 1 2.134 2.134c.178.818.178 1.665.178 2.523 0 .858 0 1.705-.178 2.523a2.988 2.988 0 0 1-2.134 2.134c-.818.178-1.665.178-2.523-.178h-7.641c-.858 0-1.705 0-2.523-.178a2.988 2.988 0 0 1-2.134-2.134c-.178-.818-.178-1.665-.178-2.523 0-.858 0-1.705.178-2.523a2.988 2.988 0 0 1 2.134-2.134c.818-.178 1.665-.178 2.523-.178h7.641c.858 0 1.705 0 2.523.178zm-6.344 8.249c1.239 0 2.244-1.006 2.244-2.246S13.239 11.507 12 11.507s-2.244 1.005-2.244 2.246S10.761 16 12 16zm4.368-7.587a1.282 1.282 0 0 1 .734-1.281 1.3 1.3 0 0 1 1.421.15c.28.22.44.54.435.877a1.3 1.3 0 0 1-.435.874 1.287 1.287 0 0 1-.874.435 1.3 1.3 0 0 1-1.281-.734c-.107-.211-.162-.446-.162-.688 0-.243.055-.476.162-.684z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
