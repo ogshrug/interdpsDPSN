@@ -6,6 +6,7 @@
     <title>Crop Suggestions - KrishiMitra</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/api-mock.js"></script>
+    <script src="./js/translations.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -26,32 +27,32 @@
                 </svg>
             </button>
 
-            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="nav-item text-gray-700 font-medium py-2">Dashboard</a>
-                <a href="soil-analysis.html" class="nav-item text-gray-700 font-medium py-2">Soil Analysis</a>
-                <a href="weather.html" class="nav-item text-gray-700 font-medium py-2">Weather</a>
-                <a href="crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2 active">Crop Suggestions</a>
-                <a href="market-prices.html" class="nav-item text-gray-700 font-medium py-2">Market Prices</a>
+            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8 mobile-menu-active">
+                <a href="index.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Dashboard">Dashboard</a>
+                <a href="soil-analysis.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Soil Analysis">Soil Analysis</a>
+                <a href="weather.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Weather">Weather</a>
+                <a href="crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2 active" data-translate="Crop Suggestions">Crop Suggestions</a>
+                <a href="market-prices.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Market Prices">Market Prices</a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
-        <h1 class="text-2xl font-bold mb-6">Crop Suggestions</h1>
+        <h1 class="text-2xl font-bold mb-6" data-translate="Crop Suggestions">Crop Suggestions</h1>
         
         <!-- Crop Suggestions Content -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden p-6">
-            <h2 class="text-xl font-semibold mb-4">AI-Powered Crop Recommendations</h2>
-            <p class="mb-4">Based on your soil analysis, weather patterns, and market trends, here are our recommended crops for your fields.</p>
+            <h2 class="text-xl font-semibold mb-4" data-translate="AI-Powered Crop Recommendations">AI-Powered Crop Recommendations</h2>
+            <p class="mb-4" data-translate="Based on your soil analysis, weather patterns, and market trends, here are our recommended crops for your fields.">Based on your soil analysis, weather patterns, and market trends, here are our recommended crops for your fields.</p>
             
             <!-- Field Selector -->
             <div class="mb-6">
-                <label for="field" class="block text-sm font-medium text-gray-700 mb-1">Select Field</label>
+                <label for="field" class="block text-sm font-medium text-gray-700 mb-1" data-translate="Select Field">Select Field</label>
                 <select id="field" class="w-full md:w-1/3 border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                    <option value="field-1">North Field</option>
-                    <option value="field-2" selected>South Field</option>
-                    <option value="field-3">East Field</option>
+                    <option value="field-1" data-translate="North Field">North Field</option>
+                    <option value="field-2" selected data-translate="South Field">South Field</option>
+                    <option value="field-3" data-translate="East Field">East Field</option>
                 </select>
             </div>
             
@@ -68,25 +69,25 @@
                     <div class="p-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <p class="text-sm text-gray-500 mb-1">Expected Yield</p>
+                                <p class="text-sm text-gray-500 mb-1" data-translate="Expected Yield">Expected Yield</p>
                                 <p class="font-medium">6.5 tons/ha</p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-500 mb-1">Water Requirement</p>
+                                <p class="text-sm text-gray-500 mb-1" data-translate="Water Requirement">Water Requirement</p>
                                 <p class="font-medium">Medium</p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-500 mb-1">Growing Period</p>
+                                <p class="text-sm text-gray-500 mb-1" data-translate="Growing Period">Growing Period</p>
                                 <p class="font-medium">85-95 days</p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-500 mb-1">Best Planting Time</p>
+                                <p class="text-sm text-gray-500 mb-1" data-translate="Best Planting Time">Best Planting Time</p>
                                 <p class="font-medium">June-July</p>
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-100">
-                            <h4 class="font-medium text-sm mb-2">Why this crop?</h4>
-                            <p class="text-sm text-gray-600">Maize is well-suited to your soil's nitrogen levels and the expected rainfall pattern. The DHM-117 variety is drought-tolerant and offers good resistance to common pests in your region.</p>
+                            <h4 class="font-medium text-sm mb-2" data-translate="Why this crop?">Why this crop?</h4>
+                            <p class="text-sm text-gray-600" data-translate="Maize is well-suited to your soil's nitrogen levels and the expected rainfall pattern. The DHM-117 variety is drought-tolerant and offers good resistance to common pests in your region.">Maize is well-suited to your soil's nitrogen levels and the expected rainfall pattern. The DHM-117 variety is drought-tolerant and offers good resistance to common pests in your region.</p>
                         </div>
                     </div>
                 </div>
@@ -102,25 +103,25 @@
                     <div class="p-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <p class="text-sm text-gray-500 mb-1">Expected Yield</p>
+                                <p class="text-sm text-gray-500 mb-1" data-translate="Expected Yield">Expected Yield</p>
                                 <p class="font-medium">2.2 tons/ha</p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-500 mb-1">Water Requirement</p>
+                                <p class="text-sm text-gray-500 mb-1" data-translate="Water Requirement">Water Requirement</p>
                                 <p class="font-medium">Medium</p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-500 mb-1">Growing Period</p>
+                                <p class="text-sm text-gray-500 mb-1" data-translate="Growing Period">Growing Period</p>
                                 <p class="font-medium">160-180 days</p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-500 mb-1">Best Planting Time</p>
+                                <p class="text-sm text-gray-500 mb-1" data-translate="Best Planting Time">Best Planting Time</p>
                                 <p class="font-medium">May-June</p>
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-100">
-                            <h4 class="font-medium text-sm mb-2">Why this crop?</h4>
-                            <p class="text-sm text-gray-600">Bt Cotton is suitable for your soil's pH level and offers good returns. The variety is resistant to bollworms and requires moderate irrigation, which aligns with your field's water availability.</p>
+                            <h4 class="font-medium text-sm mb-2" data-translate="Why this crop?">Why this crop?</h4>
+                            <p class="text-sm text-gray-600" data-translate="Bt Cotton is suitable for your soil's pH level and offers good returns. The variety is resistant to bollworms and requires moderate irrigation, which aligns with your field's water availability.">Bt Cotton is suitable for your soil's pH level and offers good returns. The variety is resistant to bollworms and requires moderate irrigation, which aligns with your field's water availability.</p>
                         </div>
                     </div>
                 </div>
@@ -128,14 +129,14 @@
             
             <!-- Crop Rotation Recommendation -->
             <div class="mt-8">
-                <h3 class="text-lg font-semibold mb-3">Crop Rotation Recommendation</h3>
+                <h3 class="text-lg font-semibold mb-3" data-translate="Crop Rotation Recommendation">Crop Rotation Recommendation</h3>
                 <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
-                    <p class="text-sm">For optimal soil health and yield sustainability, we recommend:</p>
+                    <p class="text-sm" data-translate="For optimal soil health and yield sustainability, we recommend:">For optimal soil health and yield sustainability, we recommend:</p>
                     <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
-                        <li>Current Season: Maize</li>
-                        <li>Next Season: Legume crop (Chickpea or Lentil) to restore nitrogen</li>
-                        <li>Following Season: Cotton</li>
-                        <li>Fourth Season: Return to Maize or try Sorghum</li>
+                        <li data-translate="Current Season: Maize">Current Season: Maize</li>
+                        <li data-translate="Next Season: Legume crop (Chickpea or Lentil) to restore nitrogen">Next Season: Legume crop (Chickpea or Lentil) to restore nitrogen</li>
+                        <li data-translate="Following Season: Cotton">Following Season: Cotton</li>
+                        <li data-translate="Fourth Season: Return to Maize or try Sorghum">Fourth Season: Return to Maize or try Sorghum</li>
                     </ul>
                 </div>
             </div>
@@ -147,29 +148,29 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">KrishiMitra</h3>
-                    <p class="text-gray-400 text-sm">Empowering farmers with data-driven agriculture for a sustainable future.</p>
+                    <h3 class="text-lg font-semibold mb-4" data-translate="KrishiMitra">KrishiMitra</h3>
+                    <p class="text-gray-400 text-sm" data-translate="Empowering farmers with data-driven agriculture for a sustainable future.">Empowering farmers with data-driven agriculture for a sustainable future.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-translate="Quick Links">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Dashboard</a></li>
-                        <li><a href="soil-analysis.html" class="text-gray-400 hover:text-white transition-colors">Soil Analysis</a></li>
-                        <li><a href="crop-suggestions.html" class="text-gray-400 hover:text-white transition-colors">Crop Suggestions</a></li>
-                        <li><a href="market-prices.html" class="text-gray-400 hover:text-white transition-colors">Market Prices</a></li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Dashboard">Dashboard</a></li>
+                        <li><a href="soil-analysis.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Soil Analysis">Soil Analysis</a></li>
+                        <li><a href="crop-suggestions.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Crop Suggestions">Crop Suggestions</a></li>
+                        <li><a href="market-prices.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Market Prices">Market Prices</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-translate="Support">Support</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Feedback</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors" data-translate="Help Center">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors" data-translate="Contact Us">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors" data-translate="Feedback">Feedback</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors" data-translate="Terms of Service">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-translate="Connect With Us">Connect With Us</h3>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

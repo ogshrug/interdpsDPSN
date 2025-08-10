@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soil Analysis - KrishiMitra</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/translations.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -25,7 +26,7 @@
                 </svg>
             </button>
 
-            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8">
+            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8 mobile-menu-active">
                 <a href="index.html" class="nav-item text-gray-700 font-medium py-2">Dashboard</a>
                 <a href="soil-analysis.html" class="nav-item text-gray-700 font-medium py-2 active">Soil Analysis</a>
                 <a href="weather.html" class="nav-item text-gray-700 font-medium py-2">Weather</a>
@@ -37,30 +38,30 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
-        <h1 class="text-2xl font-bold mb-6">Soil Analysis</h1>
+        <h1 class="text-2xl font-bold mb-6" data-translate="Soil Analysis">Soil Analysis</h1>
         
         <!-- Soil Analysis Content -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden p-6">
-            <h2 class="text-xl font-semibold mb-4">Comprehensive Soil Analysis</h2>
-            <p class="mb-4">Upload soil test results or connect your NitroBit sensor for real-time analysis.</p>
+            <h2 class="text-xl font-semibold mb-4" data-translate="Comprehensive Soil Analysis">Comprehensive Soil Analysis</h2>
+            <p class="mb-4" data-translate="Upload soil test results or connect your NitroBit sensor for real-time analysis.">Upload soil test results or connect your NitroBit sensor for real-time analysis.</p>
             
             <!-- Upload Section -->
             <div class="mb-6 p-4 border border-dashed border-gray-300 rounded-lg text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                 </svg>
-                <p class="text-sm text-gray-500 mb-2">Drag and drop soil test results or</p>
-                <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Browse Files</button>
+                <p class="text-sm text-gray-500 mb-2" data-translate="Drag and drop soil test results or">Drag and drop soil test results or</p>
+                <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-translate="Browse Files">Browse Files</button>
             </div>
             
             <!-- Sample Results -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-medium mb-2">Macronutrients</h3>
+                    <h3 class="font-medium mb-2" data-translate="Macronutrients">Macronutrients</h3>
                     <div class="space-y-2">
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Nitrogen (N)</span>
+                                <span data-translate="Nitrogen (N)">Nitrogen (N)</span>
                                 <span class="font-medium">180 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -69,7 +70,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Phosphorus (P)</span>
+                                <span data-translate="Phosphorus (P)">Phosphorus (P)</span>
                                 <span class="font-medium">45 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -78,7 +79,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Potassium (K)</span>
+                                <span data-translate="Potassium (K)">Potassium (K)</span>
                                 <span class="font-medium">210 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -89,11 +90,11 @@
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-medium mb-2">Micronutrients</h3>
+                    <h3 class="font-medium mb-2" data-translate="Micronutrients">Micronutrients</h3>
                     <div class="space-y-2">
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Iron (Fe)</span>
+                                <span data-translate="Iron (Fe)">Iron (Fe)</span>
                                 <span class="font-medium">12 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -102,7 +103,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Zinc (Zn)</span>
+                                <span data-translate="Zinc (Zn)">Zinc (Zn)</span>
                                 <span class="font-medium">1.2 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -111,7 +112,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Manganese (Mn)</span>
+                                <span data-translate="Manganese (Mn)">Manganese (Mn)</span>
                                 <span class="font-medium">8 ppm</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -122,11 +123,11 @@
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-medium mb-2">Physical Properties</h3>
+                    <h3 class="font-medium mb-2" data-translate="Physical Properties">Physical Properties</h3>
                     <div class="space-y-2">
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>pH Level</span>
+                                <span data-translate="pH Level">pH Level</span>
                                 <span class="font-medium">6.2</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -135,7 +136,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Organic Matter</span>
+                                <span data-translate="Organic Matter">Organic Matter</span>
                                 <span class="font-medium">3.5%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -144,7 +145,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between text-sm mb-1">
-                                <span>Cation Exchange</span>
+                                <span data-translate="Cation Exchange">Cation Exchange</span>
                                 <span class="font-medium">12 meq/100g</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -157,14 +158,14 @@
             
             <!-- Recommendations -->
             <div class="mt-8">
-                <h3 class="text-lg font-semibold mb-3">AI-Powered Recommendations</h3>
+                <h3 class="text-lg font-semibold mb-3" data-translate="AI-Powered Recommendations">AI-Powered Recommendations</h3>
                 <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-                    <p class="text-sm">Based on your soil analysis, we recommend:</p>
+                    <p class="text-sm" data-translate="Based on your soil analysis, we recommend:">Based on your soil analysis, we recommend:</p>
                     <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
-                        <li>Apply zinc sulfate at 25 kg/ha to address zinc deficiency</li>
-                        <li>Consider adding organic matter to improve soil structure</li>
-                        <li>Maintain current nitrogen levels which are optimal for most crops</li>
-                        <li>Monitor manganese levels during the growing season</li>
+                        <li data-translate="Apply zinc sulfate at 25 kg/ha to address zinc deficiency">Apply zinc sulfate at 25 kg/ha to address zinc deficiency</li>
+                        <li data-translate="Consider adding organic matter to improve soil structure">Consider adding organic matter to improve soil structure</li>
+                        <li data-translate="Maintain current nitrogen levels which are optimal for most crops">Maintain current nitrogen levels which are optimal for most crops</li>
+                        <li data-translate="Monitor manganese levels during the growing season">Monitor manganese levels during the growing season</li>
                     </ul>
                 </div>
             </div>
