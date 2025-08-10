@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrishiMitra - Connect NitroBit</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/translations.js"></script>
     <script src="./js/main.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -24,7 +25,7 @@
                 </svg>
             </button>
 
-            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8">
+            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8 mobile-menu-active">
                 <a href="./index.html" class="nav-item text-gray-700 font-medium py-2">Dashboard</a>
                 <a href="./soil-analysis.html" class="nav-item text-gray-700 font-medium py-2">Soil Analysis</a>
                 <a href="./weather.html" class="nav-item text-gray-700 font-medium py-2">Weather</a>
@@ -36,11 +37,95 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold mb-6">Connect NitroBit</h1>
+        <h1 class="text-3xl font-bold mb-6" data-translate="Connect NitroBit">Connect NitroBit</h1>
         <div class="bg-white rounded-xl shadow-md p-6">
-            <p>Instructions for connecting your NitroBit device will be displayed here.</p>
+            <div id="connection-instructions">
+                <h2 class="text-xl font-semibold mb-4" data-translate="Connection Instructions">Connection Instructions</h2>
+                <ol class="list-decimal list-inside space-y-2">
+                    <li data-translate="1. Click the blue button and hold">1. Click the blue button and hold</li>
+                </ol>
+            </div>
+            <div id="connection-status" class="mt-6 hidden">
+                <h2 class="text-xl font-semibold mb-4" data-translate="Connection Status">Connection Status</h2>
+                <div class="flex items-center">
+                    <div class="h-4 w-4 rounded-full bg-yellow-500 mr-2 animate-pulse"></div>
+                    <p data-translate="Connecting...">Connecting...</p>
+                </div>
+            </div>
+            <div id="nitrobit-details" class="mt-6 hidden">
+                <h2 class="text-xl font-semibold mb-4" data-translate="NitroBit Details">NitroBit Details</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm text-gray-500" data-translate="Battery">Battery</p>
+                        <p class="font-medium">84%</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500" data-translate="MAC Address">MAC Address</p>
+                        <p class="font-medium">00:1A:2B:3C:4D:5E</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500" data-translate="IP Address">IP Address</p>
+                        <p class="font-medium">192.168.1.100</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-medium mb-2" data-translate="Soil Sensor Data">Soil Sensor Data</h3>
+                    <div class="space-y-2">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span data-translate="Temperature">Temperature</span>
+                                <span class="font-medium">22°C</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span data-translate="Humidity">Humidity</span>
+                                <span class="font-medium">65%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span data-translate="pH Level">pH Level</span>
+                                <span class="font-medium">6.8</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span data-translate="Nitrogen">Nitrogen</span>
+                                <span class="font-medium">180 ppm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="connect-button" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors" data-translate="Connect">Connect</button>
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const connectButton = document.getElementById('connect-button');
+            const connectionInstructions = document.getElementById('connection-instructions');
+            const connectionStatus = document.getElementById('connection-status');
+            const nitrobitDetails = document.getElementById('nitrobit-details');
+
+            let holdTimeout;
+
+            connectButton.addEventListener('mousedown', function() {
+                holdTimeout = setTimeout(function() {
+                    connectionInstructions.classList.add('hidden');
+                    connectionStatus.classList.remove('hidden');
+                    setTimeout(function() {
+                        connectionStatus.classList.add('hidden');
+                        nitrobitDetails.classList.remove('hidden');
+                    }, 2000);
+                }, 1000);
+            });
+
+            connectButton.addEventListener('mouseup', function() {
+                clearTimeout(holdTimeout);
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 mt-12">

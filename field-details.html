@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrishiMitra - Field Details</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/translations.js"></script>
     <script src="./js/main.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -24,7 +25,7 @@
                 </svg>
             </button>
 
-            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8">
+            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8 mobile-menu-active">
                 <a href="./index.html" class="nav-item text-gray-700 font-medium py-2">Dashboard</a>
                 <a href="./soil-analysis.html" class="nav-item text-gray-700 font-medium py-2">Soil Analysis</a>
                 <a href="./weather.html" class="nav-item text-gray-700 font-medium py-2">Weather</a>
@@ -36,9 +37,9 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold mb-6">Field Details</h1>
+        <h1 class="text-3xl font-bold mb-6" data-translate="Field Details">Field Details</h1>
         <div class="bg-white rounded-xl shadow-md p-6">
-            <p>Detailed field analysis will be displayed here.</p>
+            <p data-translate="Detailed field analysis will be displayed here.">Detailed field analysis will be displayed here.</p>
         </div>
     </main>
 
