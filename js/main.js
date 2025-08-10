@@ -14,12 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mobileMenuButton.addEventListener('click', function() {
         mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.add('mobile-menu-active');
     });
 
     closeButton.addEventListener('click', function() {
         mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('mobile-menu-active');
     });
 });
 
@@ -39,14 +37,28 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const languageButtons = document.querySelectorAll('.language-dropdown button');
     const languageDisplay = document.querySelector('.language-selector span');
-    
+
+    function setLanguage(lang) {
+        const translatableElements = document.querySelectorAll('[data-translate]');
+        translatableElements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            if (translations[lang] && translations[lang][key]) {
+                element.innerHTML = translations[lang][key];
+            }
+        });
+        if (languageDisplay) {
+            languageDisplay.textContent = lang === 'hi' ? 'हिंदी' : 'English';
+        }
+        document.querySelector('.language-dropdown').classList.add('hidden');
+    }
+
     languageButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const selectedLanguage = this.textContent.split(' ')[0];
-            languageDisplay.textContent = selectedLanguage;
-            // Here you would add code to change the application language
-            // For now, we'll just close the dropdown
-            document.querySelector('.language-dropdown').classList.add('hidden');
+            const selectedLanguage = this.getAttribute('data-lang');
+            setLanguage(selectedLanguage);
         });
     });
+
+    // Set initial language
+    setLanguage('en');
 });
