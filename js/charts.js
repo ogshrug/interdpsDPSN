@@ -71,6 +71,88 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Nutrients Chart
+    const nutrientsCtx = document.getElementById('nutrientsChart').getContext('2d');
+    const nutrientsChart = new Chart(nutrientsCtx, {
+        type: 'radar',
+        data: {
+            labels: ['Nitrogen', 'Phosphorus', 'Potassium', 'Iron', 'Zinc', 'Manganese'],
+            datasets: [{
+                label: 'Field #1',
+                data: [72, 60, 84, 80, 40, 65],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(54, 162, 235)'
+            }, {
+                label: 'Optimal',
+                data: [70, 70, 70, 70, 70, 70],
+                backgroundColor: 'rgba(43, 147, 72, 0.2)',
+                borderColor: 'rgb(43, 147, 72)',
+                pointBackgroundColor: 'rgb(43, 147, 72)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(43, 147, 72)'
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Nutrient Balance',
+                    font: {
+                        size: 16,
+                        family: '"Poppins", sans-serif'
+                    }
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+    // Temperature Chart
+    const temperatureCtx = document.getElementById('temperatureChart').getContext('2d');
+    const temperatureChart = new Chart(temperatureCtx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Soil Temperature (°C)',
+                data: [22, 23, 24, 23, 25, 26, 25],
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                tension: 0.3,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '7-Day Soil Temperature',
+                    font: {
+                        size: 16,
+                        family: '"Poppins", sans-serif'
+                    }
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+
     // Moisture Chart
     const moistureCtx = document.getElementById('moistureChart').getContext('2d');
     const moistureChart = new Chart(moistureCtx, {
