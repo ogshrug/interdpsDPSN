@@ -14,17 +14,21 @@ KrishiMitra serves as a digital assistant for Indian farmers, providing tools an
 
 ## 🌟 Features
 
-- 📈 **Soil Health Monitoring:** View nitrogen, oxygen, and water levels in soil.
-- 🌦️ **Weather Updates:** (If applicable) Provide real-time weather insights for farming decisions.
-- 🌱 **Crop Guidance:** Recommend crops based on soil and climate (future expansion).
-- 📊 **Data Visualizations:** Simple graphs to help farmers understand their land’s condition.
-- 🧑‍🌾 **User-Friendly Interface:** Clean and responsive design for all device types.
+- 🗺️ **Interactive Dashboard:** A central hub with a map-based view of field conditions, critical alerts, and key metrics.
+- 📈 **Soil Health Analysis:** Detailed insights into soil parameters like moisture, pH, nitrogen, and other nutrients.
+- 🌦️ **Weather Forecasts:** Real-time weather data to help with planning and decision-making.
+- 🌱 **AI-Powered Recommendations:** Smart suggestions for crop selection, fertilizer application, and irrigation scheduling.
+- 💹 **Market Price Tracking:** Access to current market prices for various crops to maximize profitability.
+- 🛰️ **NitroBit Sensor Integration:** Seamless connection with NitroBit hardware for real-time field data monitoring.
+- 📊 **Data Visualizations:** Rich charts and graphs to visualize historical data and trends.
+- 🌐 **Multilingual Support:** Interface available in multiple Indian languages to ensure accessibility for all farmers.
 
 ---
 
 ## 🔧 Technologies Used
 
 - **HTML5 / CSS3 / JavaScript** – Front-end development
+- **Tailwind CSS** – For styling the user interface
 - **Chart.js / QuickChart** – For rendering data visualizations
 - **GitHub Pages** – For free and fast hosting
 - *(Optional: Mention any APIs or data sources used)*
@@ -34,11 +38,28 @@ KrishiMitra serves as a digital assistant for Indian farmers, providing tools an
 ## 📁 Project Structure
 
 ```bash
-📁 interdpsDPSN/
-├── index.html        # Main landing page
-├── style.css         # Styling for the website
-├── scripts.js        # JavaScript logic and interactivity
-└── assets/           # Images, graphs, and other media
+📁 KrishiMitra/
+├── README.md
+├── index.html
+├── contact.html
+├── crop-suggestions.html
+├── field-details.html
+├── market-prices.html
+├── nitrobit.html
+├── recommendations.html
+├── soil-analysis.html
+├── weather.html
+├── css/
+│   ├── contact.css
+│   └── styles.css
+└── js/
+    ├── api-mock.js
+    ├── charts.js
+    ├── contact.js
+    ├── main.js
+    ├── maps.js
+    ├── recommendations.js
+    └── translations.js
 ```
 
 ---
