@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.appendChild(closeButton);
 
     mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('menu-open');
     });
 
     closeButton.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('menu-open');
     });
 });
 
