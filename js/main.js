@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const closeButton = document.createElement('button');
+    const overlay = document.createElement('div');
+
+    overlay.className = 'fixed inset-0 bg-black opacity-50 z-40 hidden';
+    document.body.appendChild(overlay);
 
     closeButton.className = 'absolute top-4 right-4 text-gray-500 hover:text-gray-700 md:hidden';
     closeButton.innerHTML = `
@@ -12,13 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     mobileMenu.appendChild(closeButton);
 
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('menu-open');
-    });
+    function openMenu() {
+        mobileMenu.classList.add('menu-open');
+        overlay.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
 
-    closeButton.addEventListener('click', function() {
+    function closeMenu() {
         mobileMenu.classList.remove('menu-open');
-    });
+        overlay.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    mobileMenuButton.addEventListener('click', openMenu);
+    closeButton.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
 });
 
 // Alert dismissal
