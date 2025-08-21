@@ -58,6 +58,8 @@ function initMap() {
         }
     ];
 
+    const bounds = new google.maps.LatLngBounds();
+
     // Add polygons for each field
     fields.forEach(field => {
         // Set polygon color based on status
@@ -79,7 +81,7 @@ function initMap() {
         // NOTE: The polygon is a simple square because the sample data only provides a center point.
         // For real-world applications, you would use a service to get actual field boundaries.
         // Define the bounds for the polygon
-        const bounds = [
+        const polygonPath = [
             { lat: field.position.lat + 0.01, lng: field.position.lng - 0.01 },
             { lat: field.position.lat + 0.01, lng: field.position.lng + 0.01 },
             { lat: field.position.lat - 0.01, lng: field.position.lng + 0.01 },
@@ -88,7 +90,7 @@ function initMap() {
 
         // Create the polygon
         const fieldPolygon = new google.maps.Polygon({
-            paths: bounds,
+            paths: polygonPath,
             strokeColor: polygonColor,
             strokeOpacity: 0.8,
             strokeWeight: 2,
@@ -96,6 +98,9 @@ function initMap() {
             fillOpacity: 0.35,
             map: map,
         });
+
+        // Extend the map bounds to include this polygon
+        polygonPath.forEach(latLng => bounds.extend(latLng));
 
         // Create info window content
         const contentString = `
@@ -120,6 +125,11 @@ function initMap() {
             infoWindow.open(map);
         });
     });
+
+    // Fit the map to the bounds of all polygons
+    if (fields.length > 0) {
+        map.fitBounds(bounds);
+    }
 }
 
 // Initialize Google Map when the API is loaded
