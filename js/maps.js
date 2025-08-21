@@ -58,37 +58,43 @@ function initMap() {
         }
     ];
 
-    // Add markers for each field
+    // Add polygons for each field
     fields.forEach(field => {
-        // Set marker color based on status
-        let markerColor;
+        // Set polygon color based on status
+        let polygonColor;
         switch (field.status) {
             case "optimal":
-                markerColor = "#2B9348";
+                polygonColor = "#2B9348";
                 break;
             case "moderate":
-                markerColor = "#FF9E1B";
+                polygonColor = "#FF9E1B";
                 break;
             case "critical":
-                markerColor = "#D62828";
+                polygonColor = "#D62828";
                 break;
             default:
-                markerColor = "#2B9348";
+                polygonColor = "#2B9348";
         }
 
-        // Create custom marker
-        const marker = new google.maps.Marker({
-            position: field.position,
+        // NOTE: The polygon is a simple square because the sample data only provides a center point.
+        // For real-world applications, you would use a service to get actual field boundaries.
+        // Define the bounds for the polygon
+        const bounds = [
+            { lat: field.position.lat + 0.01, lng: field.position.lng - 0.01 },
+            { lat: field.position.lat + 0.01, lng: field.position.lng + 0.01 },
+            { lat: field.position.lat - 0.01, lng: field.position.lng + 0.01 },
+            { lat: field.position.lat - 0.01, lng: field.position.lng - 0.01 },
+        ];
+
+        // Create the polygon
+        const fieldPolygon = new google.maps.Polygon({
+            paths: bounds,
+            strokeColor: polygonColor,
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: polygonColor,
+            fillOpacity: 0.35,
             map: map,
-            title: field.name,
-            icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                fillColor: markerColor,
-                fillOpacity: 0.9,
-                strokeWeight: 2,
-                strokeColor: "#ffffff",
-                scale: 10
-            }
         });
 
         // Create info window content
@@ -105,12 +111,13 @@ function initMap() {
 
         // Create info window
         const infoWindow = new google.maps.InfoWindow({
-            content: contentString
+            content: contentString,
+            position: field.position
         });
 
-        // Add click event to marker
-        marker.addListener("click", () => {
-            infoWindow.open(map, marker);
+        // Add click event to polygon
+        fieldPolygon.addListener("click", () => {
+            infoWindow.open(map);
         });
     });
 }
