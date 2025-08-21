@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         submissionAnimation.classList.remove('hidden');
         submissionAnimation.classList.add('animate');
 
+        const lang = localStorage.getItem('language') || 'en';
+        const message = translations[lang]['Thank you! Your message has been sent.'] || 'Thank you! Your message has been sent.';
+        submissionAnimation.querySelector('p').textContent = message;
+
         // You can add an AJAX call here to actually submit the form data
         // For now, we'll just reset the form and show it again after a delay
         setTimeout(() => {

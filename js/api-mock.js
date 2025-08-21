@@ -163,80 +163,80 @@ const API = {
                 const suggestions = {
                     "field-1": [
                         {
-                            crop: "Wheat",
-                            variety: "HD-2967",
+                            cropKey: "Wheat",
+                            varietyKey: "HD-2967",
                             suitability: 92,
-                            expectedYield: "4.8 tons/ha",
-                            waterRequirement: "Medium",
-                            growingPeriod: "110-120 days"
+                            expectedYieldKey: "4.8 tons/ha",
+                            waterRequirementKey: "Medium",
+                            growingPeriodKey: "110-120 days"
                         },
                         {
-                            crop: "Barley",
-                            variety: "RD-2552",
+                            cropKey: "Barley",
+                            varietyKey: "RD-2552",
                             suitability: 85,
-                            expectedYield: "3.9 tons/ha",
-                            waterRequirement: "Low",
-                            growingPeriod: "100-110 days"
+                            expectedYieldKey: "3.9 tons/ha",
+                            waterRequirementKey: "Low",
+                            growingPeriodKey: "100-110 days"
                         },
                         {
-                            crop: "Mustard",
-                            variety: "Pusa Bold",
+                            cropKey: "Mustard",
+                            varietyKey: "Pusa Bold",
                             suitability: 78,
-                            expectedYield: "1.8 tons/ha",
-                            waterRequirement: "Low",
-                            growingPeriod: "110-130 days"
+                            expectedYieldKey: "1.8 tons/ha",
+                            waterRequirementKey: "Low",
+                            growingPeriodKey: "110-130 days"
                         }
                     ],
                     "field-2": [
                         {
-                            crop: "Rice",
-                            variety: "Pusa Basmati-1",
+                            cropKey: "Rice",
+                            varietyKey: "Pusa Basmati-1",
                             suitability: 88,
-                            expectedYield: "5.2 tons/ha",
-                            waterRequirement: "High",
-                            growingPeriod: "135-145 days"
+                            expectedYieldKey: "5.2 tons/ha",
+                            waterRequirementKey: "High",
+                            growingPeriodKey: "135-145 days"
                         },
                         {
-                            crop: "Maize",
-                            variety: "DHM-117",
+                            cropKey: "Maize",
+                            varietyKey: "DHM-117",
                             suitability: 75,
-                            expectedYield: "6.5 tons/ha",
-                            waterRequirement: "Medium",
-                            growingPeriod: "85-95 days"
+                            expectedYieldKey: "6.5 tons/ha",
+                            waterRequirementKey: "Medium",
+                            growingPeriodKey: "85-95 days"
                         },
                         {
-                            crop: "Cotton",
-                            variety: "Bt Cotton",
+                            cropKey: "Cotton",
+                            varietyKey: "Bt Cotton",
                             suitability: 70,
-                            expectedYield: "2.2 tons/ha",
-                            waterRequirement: "Medium",
-                            growingPeriod: "160-180 days"
+                            expectedYieldKey: "2.2 tons/ha",
+                            waterRequirementKey: "Medium",
+                            growingPeriodKey: "160-180 days"
                         }
                     ],
                     "field-3": [
                         {
-                            crop: "Maize",
-                            variety: "DHM-117",
+                            cropKey: "Maize",
+                            varietyKey: "DHM-117",
                             suitability: 94,
-                            expectedYield: "7.2 tons/ha",
-                            waterRequirement: "Medium",
-                            growingPeriod: "85-95 days"
+                            expectedYieldKey: "7.2 tons/ha",
+                            waterRequirementKey: "Medium",
+                            growingPeriodKey: "85-95 days"
                         },
                         {
-                            crop: "Soybean",
-                            variety: "JS-335",
+                            cropKey: "Soybean",
+                            varietyKey: "JS-335",
                             suitability: 86,
-                            expectedYield: "2.8 tons/ha",
-                            waterRequirement: "Medium",
-                            growingPeriod: "95-105 days"
+                            expectedYieldKey: "2.8 tons/ha",
+                            waterRequirementKey: "Medium",
+                            growingPeriodKey: "95-105 days"
                         },
                         {
-                            crop: "Groundnut",
-                            variety: "TAG-24",
+                            cropKey: "Groundnut",
+                            varietyKey: "TAG-24",
                             suitability: 82,
-                            expectedYield: "2.5 tons/ha",
-                            waterRequirement: "Medium",
-                            growingPeriod: "110-120 days"
+                            expectedYieldKey: "2.5 tons/ha",
+                            waterRequirementKey: "Medium",
+                            growingPeriodKey: "110-120 days"
                         }
                     ]
                 };
@@ -255,50 +255,50 @@ const API = {
                 // Mock data
                 const prices = [
                     {
-                        crop: "Wheat",
-                        market: "Delhi",
+                        cropKey: "Wheat",
+                        marketKey: "Delhi",
                         price: 2240,
-                        unit: "quintal",
+                        unitKey: "quintal",
                         trend: "up",
                         change: 3.5
                     },
                     {
-                        crop: "Rice",
-                        market: "Kolkata",
+                        cropKey: "Rice",
+                        marketKey: "Kolkata",
                         price: 3680,
-                        unit: "quintal",
+                        unitKey: "quintal",
                         trend: "up",
                         change: 2.1
                     },
                     {
-                        crop: "Maize",
-                        market: "Bangalore",
+                        cropKey: "Maize",
+                        marketKey: "Bangalore",
                         price: 1950,
-                        unit: "quintal",
+                        unitKey: "quintal",
                         trend: "down",
                         change: -1.2
                     },
                     {
-                        crop: "Cotton",
-                        market: "Mumbai",
+                        cropKey: "Cotton",
+                        marketKey: "Mumbai",
                         price: 6250,
-                        unit: "quintal",
+                        unitKey: "quintal",
                         trend: "up",
                         change: 4.8
                     },
                     {
-                        crop: "Soybean",
-                        market: "Indore",
+                        cropKey: "Soybean",
+                        marketKey: "Indore",
                         price: 4120,
-                        unit: "quintal",
+                        unitKey: "quintal",
                         trend: "down",
                         change: -0.8
                     },
                     {
-                        crop: "Mustard",
-                        market: "Jaipur",
+                        cropKey: "Mustard",
+                        marketKey: "Jaipur",
                         price: 5340,
-                        unit: "quintal",
+                        unitKey: "quintal",
                         trend: "up",
                         change: 1.5
                     }
