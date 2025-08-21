@@ -40,19 +40,19 @@ function initMap() {
     const fields = [
         {
             name: "North Field",
-            position: { lat: 28.7041, lng: 77.1025 },
+            position: { lat: 30.736617, lng: 76.732806 },
             status: "optimal",
             data: { moisture: "72%", ph: "6.2", nitrogen: "84%" }
         },
         {
             name: "South Field",
-            position: { lat: 19.0760, lng: 72.8777 },
+            position: { lat: 28.571485, lng: 77.177288 },
             status: "critical",
             data: { moisture: "32%", ph: "5.1", nitrogen: "68%" }
         },
         {
             name: "East Field",
-            position: { lat: 22.5726, lng: 88.3639 },
+            position: { lat: 28.575211, lng: 77.336404 },
             status: "moderate",
             data: { moisture: "45%", ph: "5.8", nitrogen: "91%" }
         }
