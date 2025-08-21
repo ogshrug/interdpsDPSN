@@ -14,28 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (languageDisplay) {
             const languageMap = {
                 'en': 'English',
-                'hi': 'हिंदी',
-                'bn': 'বাংলা',
-                'ta': 'தமிழ்',
-                'te': 'తెలుగు',
-                'mr': 'मराठी',
-                'ur': 'اردو',
-                'gu': 'ગુજરાતી',
-                'kn': 'ಕನ್ನಡ',
-                'ml': 'മലയാളം',
-                'or': 'ଓଡ଼ିଆ',
-                'pa': 'ਪੰਜਾਬੀ',
-                'as': 'অসমীয়া',
-                'mai': 'मैथिली',
-                'sat': 'संथाली',
-                'ks': 'कश्मीरी',
-                'ne': 'नेपाली',
-                'kok': 'कोंकणी',
-                'mni': 'मणिपुरी',
-                'brx': 'बोडो',
-                'doi': 'डोगरी',
-                'sd': 'सिंधी',
-                'sa': 'संस्कृत'
+                'hi': 'हिंदी'
+
             };
             languageDisplay.textContent = languageMap[lang] || 'English';
         }
