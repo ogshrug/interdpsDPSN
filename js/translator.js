@@ -15,15 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const languageMap = {
                 'en': 'English',
                 'hi': 'हिंदी'
-
             };
             languageDisplay.textContent = languageMap[lang] || 'English';
         }
         localStorage.setItem('language', lang);
-        const dropdown = document.querySelector('.language-dropdown');
-        if (dropdown) {
-            dropdown.classList.add('hidden');
-        }
+        document.body.dispatchEvent(new CustomEvent('languageChange', { detail: { lang: lang } }));
     };
 
     languageButtons.forEach(button => {
