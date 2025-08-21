@@ -44,33 +44,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-// Language selector functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const languageButtons = document.querySelectorAll('.language-dropdown button');
-    const languageDisplay = document.querySelector('.language-selector span');
-
-    function setLanguage(lang) {
-        const translatableElements = document.querySelectorAll('[data-translate]');
-        translatableElements.forEach(element => {
-            const key = element.getAttribute('data-translate');
-            if (translations[lang] && translations[lang][key]) {
-                element.innerHTML = translations[lang][key];
-            }
-        });
-        if (languageDisplay) {
-            languageDisplay.textContent = lang === 'hi' ? 'हिंदी' : 'English';
-        }
-        document.querySelector('.language-dropdown').classList.add('hidden');
-    }
-
-    languageButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const selectedLanguage = this.getAttribute('data-lang');
-            setLanguage(selectedLanguage);
-        });
-    });
-
-    // Set initial language
-    setLanguage('en');
-});

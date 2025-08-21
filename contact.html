@@ -31,9 +31,23 @@
                 <a href="./weather.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Weather">Weather</a>
                 <a href="./crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Crop Suggestions">Crop Suggestions</a>
                 <a href="./market-prices.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Market Prices">Market Prices</a>
+                <div class="language-selector md:hidden mt-4">
+                    <button class="flex items-center text-gray-700 w-full">
+                        <span class="mr-1" data-translate="English">English</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown mt-2 w-full bg-white rounded-md shadow-lg z-50 hidden">
+                        <div class="p-2 max-h-60 overflow-y-auto custom-scrollbar">
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="en">English</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="hi">हिंदी (Hindi)</button>
+                        </div>
+                    </div>
+                </div>
             </nav>
 
-            <div class="flex items-center space-x-4">
+            <div class="hidden md:flex items-center space-x-4">
                 <div class="language-selector">
                     <button class="flex items-center text-gray-700">
                         <span class="mr-1" data-translate="English">English</span>
@@ -43,8 +57,8 @@
                     </button>
                     <div class="language-dropdown absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50 hidden">
                         <div class="p-2 max-h-60 overflow-y-auto custom-scrollbar">
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="en">English</button>
                             <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="hi">हिंदी (Hindi)</button>
-                            <!-- Other languages -->
                         </div>
                     </div>
                 </div>
@@ -59,26 +73,26 @@
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
         <div class="bg-white rounded-xl shadow-md overflow-hidden p-8 max-w-2xl mx-auto">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Contact Us</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6" data-translate="Contact Us">Contact Us</h2>
             <form id="contact-form">
                 <div class="mb-4">
-                    <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Name</label>
+                    <label for="name" class="block text-gray-700 text-sm font-medium mb-2" data-translate="Name">Name</label>
                     <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <div class="mb-4">
-                    <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                    <label for="email" class="block text-gray-700 text-sm font-medium mb-2" data-translate="Email">Email</label>
                     <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <div class="mb-4">
-                    <label for="subject" class="block text-gray-700 text-sm font-medium mb-2">Subject</label>
+                    <label for="subject" class="block text-gray-700 text-sm font-medium mb-2" data-translate="Subject">Subject</label>
                     <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <div class="mb-6">
-                    <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                    <label for="message" class="block text-gray-700 text-sm font-medium mb-2" data-translate="Message">Message</label>
                     <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors" data-translate="Send Message">
                         Send Message
                     </button>
                 </div>
@@ -144,6 +158,7 @@
     <script src="./js/api-mock.js"></script>
     <script src="./js/translations.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/translator.js"></script>
     <script src="./js/contact.js"></script>
 </body>
 </html>
