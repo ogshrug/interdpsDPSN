@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/translations.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/translator.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="min-h-screen overflow-x-hidden">
@@ -26,12 +27,53 @@
             </button>
 
             <nav id="mobile-menu" class="hidden md:flex items-center space-x-8 mobile-menu-active">
-                <a href="./index.html" class="nav-item text-gray-700 font-medium py-2">Dashboard</a>
-                <a href="./soil-analysis.html" class="nav-item text-gray-700 font-medium py-2">Soil Analysis</a>
-                <a href="./weather.html" class="nav-item text-gray-700 font-medium py-2">Weather</a>
-                <a href="./crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2">Crop Suggestions</a>
-                <a href="./market-prices.html" class="nav-item text-gray-700 font-medium py-2">Market Prices</a>
+                <a href="./index.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Dashboard">Dashboard</a>
+                <a href="./soil-analysis.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Soil Analysis">Soil Analysis</a>
+                <a href="./weather.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Weather">Weather</a>
+                <a href="./crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Crop Suggestions">Crop Suggestions</a>
+                <a href="./market-prices.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Market Prices">Market Prices</a>
             </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="language-selector">
+                    <button class="flex items-center text-gray-700">
+                        <span class="mr-1" data-translate="English">English</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50 hidden">
+                        <div class="p-2 max-h-60 overflow-y-auto custom-scrollbar">
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="hi">हिंदी (Hindi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="bn">বাংলা (Bengali)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="ta">தமிழ் (Tamil)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="te">తెలుగు (Telugu)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="mr">मराठी (Marathi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="ur">اردو (Urdu)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="gu">ગુજરાતી (Gujarati)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="kn">ಕನ್ನಡ (Kannada)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="ml">മലയാളം (Malayalam)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="or">ଓଡ଼ିଆ (Odia)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="pa">ਪੰਜਾਬੀ (Punjabi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="as">অসমীয়া (Assamese)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="mai">मैथिली (Maithili)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="sat">संथाली (Santali)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="ks">कश्मीरी (Kashmiri)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="ne">नेपाली (Nepali)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="kok">कोंकणी (Konkani)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="mni">मणिपुरी (Manipuri)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="brx">बोडो (Bodo)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="doi">डोगरी (Dogri)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="sd">सिंधी (Sindhi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="sa">संस्कृत (Sanskrit)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="./nitrobit.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors" data-translate="Connect NitroBit">
+                    Connect NitroBit
+                </a>
+            </div>
         </div>
     </header>
 
