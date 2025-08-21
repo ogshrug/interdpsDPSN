@@ -74,8 +74,8 @@
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
         <h1 class="text-3xl font-bold mb-6" data-translate="Field Details">Field Details</h1>
-        <div class="bg-white rounded-xl shadow-md p-6">
-            <p data-translate="Detailed field analysis will be displayed here.">Detailed field analysis will be displayed here.</p>
+        <div class="bg-white rounded-xl shadow-md">
+            <div id="map" class="h-96 w-full"></div>
         </div>
     </main>
 
@@ -128,5 +128,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="./js/maps.js"></script>
 </body>
 </html>
