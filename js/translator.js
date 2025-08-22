@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (languageDisplay) {
             const languageMap = {
                 'en': 'English',
-                'hi': 'हिंदी'
+                'hi': 'हिंदी',
+                'pa': 'ਪੰਜਾਬੀ'
             };
             languageDisplay.textContent = languageMap[lang] || 'English';
         }
