@@ -207,7 +207,8 @@ const translations = {
         "Post Update": "Post Update",
         "Pest Advice": "Pest Advice",
         "Farming Advice": "Farming Advice",
-        "Community": "Community"
+        "Community": "Community",
+        "View All Recommendations": "View All Recommendations"
     },
     hi: {
         "Dashboard": "डैशबोर्ड",
@@ -417,6 +418,7 @@ const translations = {
         "Post Update": "अपडेट पोस्ट करें",
         "Pest Advice": "कीट सलाह",
         "Farming Advice": "खेती की सलाह",
-        "Community": "समुदाय"
+        "Community": "समुदाय",
+        "View All Recommendations": "सभी सिफारिशें देखें"
     }
 };

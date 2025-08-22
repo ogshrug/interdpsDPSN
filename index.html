@@ -509,6 +509,20 @@
                         </a>
                     </div>
                 </div>
+                <div class="language-selector hidden md:block">
+                    <button class="flex items-center text-gray-400 hover:text-white transition-colors">
+                        <span class="mr-1" data-translate="English">English</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown absolute bottom-full mb-2 w-48 bg-white rounded-md shadow-lg z-50 hidden">
+                        <div class="p-2 max-h-60 overflow-y-auto custom-scrollbar">
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="en" data-translate="English">English</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="hi" data-translate="Hindi">हिंदी (Hindi)</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
