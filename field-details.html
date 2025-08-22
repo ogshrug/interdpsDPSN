@@ -57,37 +57,80 @@
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
         <h1 class="text-3xl font-bold mb-6" data-translate="Field Details">Field Details</h1>
-        <div class="bg-white rounded-xl shadow-md">
-            <div id="map" class="h-96 w-full"></div>
-            <div class="p-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Column 1: Soil Health -->
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h2 class="text-xl font-bold mb-4" data-translate="Soil Health">Soil Health</h2>
-                        <ul class="space-y-2">
+        <div class="bg-white rounded-xl shadow-md p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Field 1: North Field -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h2 class="text-xl font-bold mb-4" data-translate="North Field">North Field</h2>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Soil Health">Soil Health</h3>
+                        <ul class="space-y-2 text-sm">
                             <li class="flex justify-between"><span>pH Level:</span><span class="font-medium">6.8</span></li>
                             <li class="flex justify-between"><span>Organic Matter:</span><span class="font-medium">3.2%</span></li>
-                            <li class="flex justify-between"><span>Soil Texture:</span><span class="font-medium" data-translate="Loamy">Loamy</span></li>
-                            <li class="flex justify-between"><span>Temperature:</span><span class="font-medium">22°C</span></li>
                         </ul>
                     </div>
-                    <!-- Column 2: Moisture -->
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h2 class="text-xl font-bold mb-4" data-translate="Moisture">Moisture</h2>
-                        <ul class="space-y-2">
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Moisture">Moisture</h3>
+                        <ul class="space-y-2 text-sm">
                             <li class="flex justify-between"><span>Current Level:</span><span class="font-medium">45%</span></li>
-                            <li class="flex justify-between"><span>Last 24h Avg:</span><span class="font-medium">42%</span></li>
-                            <li class="flex justify-between"><span>Recommendation:</span><span class="font-medium text-green-600" data-translate="Optimal">Optimal</span></li>
                         </ul>
                     </div>
-                    <!-- Column 3: Nutrients -->
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h2 class="text-xl font-bold mb-4" data-translate="Nutrients">Nutrients</h2>
-                        <ul class="space-y-2">
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Nutrients">Nutrients</h3>
+                        <ul class="space-y-2 text-sm">
                             <li class="flex justify-between"><span>Nitrogen (N):</span><span class="font-medium">150 ppm</span></li>
                             <li class="flex justify-between"><span>Phosphorus (P):</span><span class="font-medium">65 ppm</span></li>
                             <li class="flex justify-between"><span>Potassium (K):</span><span class="font-medium">200 ppm</span></li>
-                            <li class="flex justify-between"><span>Zinc (Zn):</span><span class="font-medium">5 ppm</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Field 2: South Field -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h2 class="text-xl font-bold mb-4" data-translate="South Field">South Field</h2>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Soil Health">Soil Health</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>pH Level:</span><span class="font-medium">6.5</span></li>
+                            <li class="flex justify-between"><span>Organic Matter:</span><span class="font-medium">2.8%</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Moisture">Moisture</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>Current Level:</span><span class="font-medium">32%</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Nutrients">Nutrients</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>Nitrogen (N):</span><span class="font-medium">120 ppm</span></li>
+                            <li class="flex justify-between"><span>Phosphorus (P):</span><span class="font-medium">50 ppm</span></li>
+                            <li class="flex justify-between"><span>Potassium (K):</span><span class="font-medium">180 ppm</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Field 3: East Field -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h2 class="text-xl font-bold mb-4" data-translate="East Field">East Field</h2>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Soil Health">Soil Health</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>pH Level:</span><span class="font-medium">7.1</span></li>
+                            <li class="flex justify-between"><span>Organic Matter:</span><span class="font-medium">3.5%</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Moisture">Moisture</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>Current Level:</span><span class="font-medium">55%</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold mb-2" data-translate="Nutrients">Nutrients</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>Nitrogen (N):</span><span class="font-medium">180 ppm</span></li>
+                            <li class="flex justify-between"><span>Phosphorus (P):</span><span class="font-medium">75 ppm</span></li>
+                            <li class="flex justify-between"><span>Potassium (K):</span><span class="font-medium">220 ppm</span></li>
                         </ul>
                     </div>
                 </div>
