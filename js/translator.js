@@ -33,23 +33,35 @@ document.addEventListener('DOMContentLoaded', function() {
     setLanguage(savedLanguage);
 
     // Toggle dropdown
-    const languageSelectorButton = document.querySelector('.language-selector > button');
-    if (languageSelectorButton) {
-        languageSelectorButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            const dropdown = document.querySelector('.language-dropdown');
-            if (dropdown) {
-                dropdown.classList.toggle('hidden');
-            }
+    const languageSelectorButtons = document.querySelectorAll('.language-selector > button');
+    if (languageSelectorButtons) {
+        languageSelectorButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const dropdown = button.nextElementSibling;
+                if (dropdown) {
+                    dropdown.classList.toggle('hidden');
+                }
+            });
         });
     }
 
     // Hide dropdown when clicking outside
     document.addEventListener('click', (event) => {
-        const dropdown = document.querySelector('.language-dropdown');
-        const selector = document.querySelector('.language-selector');
-        if (dropdown && selector && !selector.contains(event.target)) {
-            dropdown.classList.add('hidden');
+        const dropdowns = document.querySelectorAll('.language-dropdown');
+        const selectors = document.querySelectorAll('.language-selector');
+
+        let clickInside = false;
+        selectors.forEach(selector => {
+            if (selector.contains(event.target)) {
+                clickInside = true;
+            }
+        });
+
+        if (!clickInside) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.add('hidden');
+            });
         }
     });
 });
