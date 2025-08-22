@@ -33,6 +33,7 @@
                 <a href="weather.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Weather">Weather</a>
                 <a href="crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2 active" data-translate="Crop Suggestions">Crop Suggestions</a>
                 <a href="market-prices.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Market Prices">Market Prices</a>
+                <a href="./community.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Community">Community</a>
                 <div class="language-selector md:hidden mt-4">
                     <button class="flex items-center text-gray-700 w-full">
                         <span class="mr-1" data-translate="English">English</span>
@@ -222,6 +223,20 @@
                                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.344 7.749a2.988 2.988 0 0 1 2.134 2.134c.178.818.178 1.665.178 2.523 0 .858 0 1.705-.178 2.523a2.988 2.988 0 0 1-2.134 2.134c-.818.178-1.665.178-2.523.178h-7.641c-.858 0-1.705 0-2.523-.178a2.988 2.988 0 0 1-2.134-2.134c-.178-.818-.178-1.665-.178-2.523 0-.858 0-1.705.178-2.523a2.988 2.988 0 0 1 2.134-2.134c.818-.178 1.665-.178 2.523-.178h7.641c.858 0 1.705 0 2.523.178zm-6.344 8.249c1.239 0 2.244-1.006 2.244-2.246S13.239 11.507 12 11.507s-2.244 1.005-2.244 2.246S10.761 16 12 16zm4.368-7.587a1.282 1.282 0 0 1 .734-1.281 1.3 1.3 0 0 1 1.421.15c.28.22.44.54.435.877a1.3 1.3 0 0 1-.435.874 1.287 1.287 0 0 1-.874.435 1.3 1.3 0 0 1-1.281-.734c-.107-.211-.162-.446-.162-.688 0-.243.055-.476.162-.684z"/>
                             </svg>
                         </a>
+                    </div>
+                </div>
+                <div class="language-selector hidden md:block">
+                    <button class="flex items-center text-gray-400 hover:text-white transition-colors">
+                        <span class="mr-1" data-translate="English">English</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown absolute bottom-full mb-2 w-48 bg-white rounded-md shadow-lg z-50 hidden">
+                        <div class="p-2 max-h-60 overflow-y-auto custom-scrollbar">
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="en" data-translate="English">English</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="hi" data-translate="Hindi">हिंदी (Hindi)</button>
+                        </div>
                     </div>
                 </div>
             </div>

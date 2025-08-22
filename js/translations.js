@@ -200,7 +200,15 @@ const translations = {
         "12 km/h": "12 km/h",
         "30°C": "30°C",
         "30%": "30%",
-        "75%": "75%"
+        "75%": "75%",
+        "Strong": "Strong",
+        "2h ago": "2h ago",
+        "Community Updates": "Community Updates",
+        "Post Update": "Post Update",
+        "Pest Advice": "Pest Advice",
+        "Farming Advice": "Farming Advice",
+        "Community": "Community",
+        "View All Recommendations": "View All Recommendations"
     },
     hi: {
         "Dashboard": "डैशबोर्ड",
@@ -403,6 +411,14 @@ const translations = {
         "12 km/h": "12 किमी/घंटा",
         "30°C": "30°C",
         "30%": "30%",
-        "75%": "75%"
+        "75%": "75%",
+        "Strong": "मजबूत",
+        "2h ago": "2 घंटे पहले",
+        "Community Updates": "सामुदायिक अपडेट",
+        "Post Update": "अपडेट पोस्ट करें",
+        "Pest Advice": "कीट सलाह",
+        "Farming Advice": "खेती की सलाह",
+        "Community": "समुदाय",
+        "View All Recommendations": "सभी सिफारिशें देखें"
     }
 };

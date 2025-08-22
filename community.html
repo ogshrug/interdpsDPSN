@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KrishiMitra - Field Details</title>
+    <title>KrishiMitra - Community</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/api-mock.js"></script>
     <script src="./js/translations.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/translator.js"></script>
+    <script src="./js/community.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="min-h-screen overflow-x-hidden">
@@ -16,7 +19,7 @@
         <div class="container mx-auto flex items-center justify-between">
             <div class="flex items-center">
                 <img src="https://placehold.co/40x40" alt="KrishiMitra logo - green leaf with digital circuit pattern overlay" class="mr-3 h-10">
-                <h1 class="text-xl font-bold text-gray-800">KrishiMitra</h1>
+                <h1 class="text-xl font-bold text-gray-800 md:block" data-translate="KrishiMitra">KrishiMitra</h1>
             </div>
 
             <!-- Mobile menu button -->
@@ -26,13 +29,18 @@
                 </svg>
             </button>
 
-            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8 mobile-menu-active">
+            <nav id="mobile-menu" class="md:flex flex-col md:flex-row items-center md:space-x-8">
                 <a href="./index.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Dashboard">Dashboard</a>
                 <a href="./soil-analysis.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Soil Analysis">Soil Analysis</a>
                 <a href="./weather.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Weather">Weather</a>
                 <a href="./crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Crop Suggestions">Crop Suggestions</a>
                 <a href="./market-prices.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Market Prices">Market Prices</a>
-                <a href="./community.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Community">Community</a>
+                <a href="./community.html" class="nav-item text-gray-700 font-medium py-2 active" data-translate="Community">Community</a>
+                <div class="mt-4 w-full">
+                    <a href="./nitrobit.html" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors" data-translate="Connect NitroBit">
+                        Connect NitroBit
+                    </a>
+                </div>
                 <div class="language-selector md:hidden mt-4">
                     <button class="flex items-center text-gray-700 w-full">
                         <span class="mr-1" data-translate="English">English</span>
@@ -42,8 +50,8 @@
                     </button>
                     <div class="language-dropdown mt-2 w-full bg-white rounded-md shadow-lg z-50 hidden">
                         <div class="p-2 max-h-60 overflow-y-auto custom-scrollbar">
-                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="en">English</button>
-                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="hi">हिंदी (Hindi)</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="en" data-translate="English">English</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded" data-lang="hi" data-translate="Hindi">हिंदी (Hindi)</button>
                         </div>
                     </div>
                 </div>
@@ -55,9 +63,20 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold mb-6" data-translate="Field Details">Field Details</h1>
-        <div class="bg-white rounded-xl shadow-md">
-            <div id="map" class="h-96 w-full"></div>
+        <!-- Community Section -->
+        <div class="mt-8 bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-4 border-b border-gray-200">
+                <h2 class="text-lg font-semibold text-gray-800" data-translate="Community Updates">Community Updates</h2>
+            </div>
+            <div class="p-4">
+                <div class="mb-4">
+                    <textarea id="community-post-input" class="w-full border rounded-md p-2" rows="3" placeholder="Share an update or ask for advice..."></textarea>
+                    <button id="community-post-button" class="mt-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-translate="Post Update">Post Update</button>
+                </div>
+                <div id="community-posts" class="space-y-4">
+                    <!-- Posts will be dynamically inserted here -->
+                </div>
+            </div>
         </div>
     </main>
 
@@ -66,29 +85,30 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">KrishiMitra</h3>
-                    <p class="text-gray-400 text-sm">Empowering farmers with data-driven agriculture for a sustainable future.</p>
+                    <h3 class="text-lg font-semibold mb-4" data-translate="KrishiMitra">KrishiMitra</h3>
+                    <p class="text-gray-400 text-sm" data-translate="Empowering farmers with data-driven agriculture for a sustainable future.">Empowering farmers with data-driven agriculture for a sustainable future.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-translate="Quick Links">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="./index.html" class="text-gray-400 hover:text-white transition-colors">Dashboard</a></li>
-                        <li><a href="./soil-analysis.html" class="text-gray-400 hover:text-white transition-colors">Soil Analysis</a></li>
-                        <li><a href="./crop-suggestions.html" class="text-gray-400 hover:text-white transition-colors">Crop Suggestions</a></li>
-                        <li><a href="./market-prices.html" class="text-gray-400 hover:text-white transition-colors">Market Prices</a></li>
+                        <li><a href="./index.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Dashboard">Dashboard</a></li>
+                        <li><a href="./soil-analysis.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Soil Analysis">Soil Analysis</a></li>
+                        <li><a href="./crop-suggestions.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Crop Suggestions">Crop Suggestions</a></li>
+                        <li><a href="./market-prices.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Market Prices">Market Prices</a></li>
+                        <li><a href="./community.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Community">Community</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-translate="Support">Support</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="./contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Feedback</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors" data-translate="Help Center">Help Center</a></li>
+                        <li><a href="./contact.html" class="text-gray-400 hover:text-white transition-colors" data-translate="Contact Us">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors" data-translate="Feedback">Feedback</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors" data-translate="Terms of Service">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-translate="Connect With Us">Connect With Us</h3>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -124,7 +144,5 @@
             </div>
         </div>
     </footer>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <script src="./js/maps.js"></script>
 </body>
 </html>
