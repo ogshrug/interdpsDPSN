@@ -46,13 +46,13 @@ function initMap() {
         },
         {
             name: "South Field",
-            position: { lat: 28.571485, lng: 77.177288 },
+            position: { lat: 30.823660152069277, lng: 76.80218261716912 },
             status: "critical",
             data: { moisture: "32%", ph: "5.1", nitrogen: "68%" }
         },
         {
             name: "East Field",
-            position: { lat: 28.575211, lng: 77.336404 },
+            position: { lat: 30.78711979129328, lng: 76.67211376466285 },
             status: "moderate",
             data: { moisture: "45%", ph: "5.8", nitrogen: "91%" }
         }
