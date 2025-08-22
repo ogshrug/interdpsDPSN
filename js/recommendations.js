@@ -17,26 +17,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 const waterRequirement = translations[lang][suggestion.waterRequirementKey] || suggestion.waterRequirementKey;
                 const growingPeriod = translations[lang][suggestion.growingPeriodKey] || suggestion.growingPeriodKey;
 
+                const expectedYieldLabel = translations[lang]["Expected Yield"] || "Expected Yield";
+                const waterRequirementLabel = translations[lang]["Water Requirement"] || "Water Requirement";
+                const growingPeriodLabel = translations[lang]["Growing Period"] || "Growing Period";
+                const suitableLabel = translations[lang]["Suitable"] || "Suitable";
+
                 const card = `
                     <div class="border border-gray-200 rounded-lg overflow-hidden">
                         <div class="bg-green-50 px-4 py-3 border-b border-gray-200">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-semibold text-lg">${crop} (${variety})</h3>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${suggestion.suitability}% Suitable</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${suggestion.suitability}% ${suitableLabel}</span>
                             </div>
                         </div>
                         <div class="p-4">
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <p class="text-sm text-gray-500 mb-1" data-translate="Expected Yield">Expected Yield</p>
+                                    <p class="text-sm text-gray-500 mb-1">${expectedYieldLabel}</p>
                                     <p class="font-medium">${expectedYield}</p>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-gray-500 mb-1" data-translate="Water Requirement">Water Requirement</p>
+                                    <p class="text-sm text-gray-500 mb-1">${waterRequirementLabel}</p>
                                     <p class="font-medium">${waterRequirement}</p>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-gray-500 mb-1" data-translate="Growing Period">Growing Period</p>
+                                    <p class="text-sm text-gray-500 mb-1">${growingPeriodLabel}</p>
                                     <p class="font-medium">${growingPeriod}</p>
                                 </div>
                             </div>
