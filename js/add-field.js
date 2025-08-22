@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const seedInitialData = () => {
         let fields = JSON.parse(localStorage.getItem('fields')) || [];
         const initialFields = [
-            { name: 'North Field', acres: '2.5', location: 'North Field', color: 'green' },
-            { name: 'South Field', acres: '3.2', location: 'South Field', color: 'yellow' },
-            { name: 'East Field', acres: '1.8', location: 'East Field', color: 'blue' }
+            { name: 'North Field', acres: '2.5', location: 'North Field', colorClass: 'bg-green-500' },
+            { name: 'South Field', acres: '3.2', location: 'South Field', colorClass: 'bg-yellow-500' },
+            { name: 'East Field', acres: '1.8', location: 'East Field', colorClass: 'bg-blue-500' }
         ];
 
         let needsUpdate = false;
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="h-4 w-4 rounded-full bg-${field.color}-500"></div>
+                    <div class="h-4 w-4 rounded-full ${field.colorClass}"></div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">${field.name}</td>
                 <td class="px-6 py-4 whitespace-nowrap">${field.acres}</td>
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     name: fieldName,
                     acres: acres,
                     location: location,
-                    color: 'gray' // Default color for new fields
+                    colorClass: 'bg-gray-500' // Default color for new fields
                 };
 
                 let fields = JSON.parse(localStorage.getItem('fields')) || [];
