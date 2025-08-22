@@ -110,7 +110,7 @@ function initMap() {
                 <p class="mb-1"><span class="font-medium">Moisture:</span> ${field.data.moisture}</p>
                 <p class="mb-1"><span class="font-medium">pH Level:</span> ${field.data.ph}</p>
                 <p class="mb-1"><span class="font-medium">Nitrogen:</span> ${field.data.nitrogen}</p>
-                <button class="mt-2 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">View Details</button>
+                <button class="mt-2 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm" onclick="document.getElementById('field-reports-division').scrollIntoView({ behavior: 'smooth' });">View Details</button>
             </div>
         `;
 
