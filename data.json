@@ -1,0 +1,44 @@
+[
+    {
+      "device_id": "nitrobit_001",
+      "timestamp": "2025-08-23T10:30:00Z",
+      "location": {
+        "latitude": 30.7333,
+        "longitude": 76.7794
+      },
+      "data": {
+        "nitrogen_level_ppm": 25.5,
+        "phosphorus_level_ppm": 12.3,
+        "moisture_percentage": 45.2,
+        "ph": 6.8
+      }
+    },
+    {
+      "device_id": "nitrobit_002",
+      "timestamp": "2025-08-23T10:31:00Z",
+      "location": {
+        "latitude": 30.7400,
+        "longitude": 76.7850
+      },
+      "data": {
+        "nitrogen_level_ppm": 32.1,
+        "phosphorus_level_ppm": 15.8,
+        "moisture_percentage": 51.7,
+        "ph": 6.2
+      }
+    },
+    {
+      "device_id": "nitrobit_003",
+      "timestamp": "2025-08-23T10:32:00Z",
+      "location": {
+        "latitude": 30.7250,
+        "longitude": 76.7700
+      },
+      "data": {
+        "nitrogen_level_ppm": 18.9,
+        "phosphorus_level_ppm": 9.5,
+        "moisture_percentage": 38.9,
+        "ph": 7.1
+      }
+    }
+  ]
