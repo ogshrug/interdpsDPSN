@@ -271,17 +271,6 @@
     <!-- Scripts -->
     <script src="./js/main.js"></script>
     <script src="./js/translator.js"></script>
-    <script>
-        // Weather data loading script
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load weather data from API mock
-            API.getWeatherForecast().then(data => {
-                console.log('Weather data loaded:', data);
-                // You could update the UI with this data if needed
-            }).catch(error => {
-                console.error('Error loading weather data:', error);
-            });
-        });
-    </script>
+    <script src="./js/weather.js"></script>
 </body>
 </html>
