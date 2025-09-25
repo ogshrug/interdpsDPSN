@@ -1,6 +1,6 @@
-# 🌾 KrishiMitra
+# 🌾 AgriVigyan Portal
 
-**KrishiMitra** is an initiative aimed at empowering farmers through digital tools and information. This project was developed as part of the **Inter DPS Digital Project Showcase** and is hosted live at:
+**AgriVigyan Portal** is an initiative aimed at empowering farmers through digital tools and information. This project was developed as part of the **Inter DPS Digital Project Showcase** and is hosted live at:
 
 🔗 [https://ogshrug.github.io/interdpsDPSN/](https://ogshrug.github.io/interdpsDPSN/)
 
@@ -8,7 +8,7 @@
 
 ## 💡 Overview
 
-KrishiMitra serves as a digital assistant for Indian farmers, providing tools and information to improve agricultural practices, productivity, and awareness. It is designed with simplicity and usability in mind, ensuring it is accessible even to users with limited technological experience.
+AgriVigyan Portal serves as a digital assistant for Indian farmers, providing tools and information to improve agricultural practices, productivity, and awareness. It is designed with simplicity and usability in mind, ensuring it is accessible even to users with limited technological experience.
 
 ---
 
@@ -38,7 +38,7 @@ KrishiMitra serves as a digital assistant for Indian farmers, providing tools an
 ## 📁 Project Structure
 
 ```bash
-📁 KrishiMitra/
+📁 AgriVigyan Portal/
 ├── README.md
 ├── index.html
 ├── contact.html
@@ -66,7 +66,7 @@ KrishiMitra serves as a digital assistant for Indian farmers, providing tools an
 
 ## 🚀 How to Use
 
-1. Visit [KrishiMitra Live Site](https://ogshrug.github.io/interdpsDPSN/).
+1. Visit [AgriVigyan Portal Live Site](https://ogshrug.github.io/interdpsDPSN/).
 2. Browse soil data and view insights.
 3. Use visual data to make informed farming decisions.
 
@@ -96,4 +96,4 @@ For feedback, contributions, or queries:
 
 ---
 
-> *“Let’s bridge the gap between tradition and technology in agriculture.” – Team KrishiMitra*
+> *“Let’s bridge the gap between tradition and technology in agriculture.” – Team AgriVigyan Portal*
