@@ -2,8 +2,8 @@
 function initMap() {
     // Map options - centered on India
     const mapOptions = {
-        center: { lat: 28.5723, lng: 77.3239 },
-        zoom: 15,
+        center: { lat: 20.5937, lng: 78.9629 },
+        zoom: 5,
         styles: [
             {
                 featureType: "administrative",
@@ -45,14 +45,14 @@ function initMap() {
             data: { moisture: "65%", ph: "7.1", nitrogen: "75%" }
         },
         {
-            name: "Field B (Noida)",
-            position: { lat: 28.5735, lng: 77.3255 },
+            name: "Field B (Ludhiana)",
+            position: { lat: 30.9010, lng: 75.8573 },
             status: "moderate",
             data: { moisture: "55%", ph: "6.8", nitrogen: "60%" }
         },
         {
-            name: "Field C (Noida)",
-            position: { lat: 28.5710, lng: 77.3260 },
+            name: "Field C (Indore)",
+            position: { lat: 22.7196, lng: 75.8577 },
             status: "critical",
             data: { moisture: "40%", ph: "7.5", nitrogen: "45%" }
         }
