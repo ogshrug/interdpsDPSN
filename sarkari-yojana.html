@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarkari Yojana - AgriVigyan Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen overflow-x-hidden">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md px-4 py-3 sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="./notext.jpeg" alt="AgriVigyan Portal logo" class="mr-3 h-10">
+                <h1 class="text-xl font-bold text-gray-800">AgriVigyan Portal</h1>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <nav id="mobile-menu" class="hidden md:flex items-center space-x-8 mobile-menu-active">
+                <a href="index.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Dashboard">Dashboard</a>
+                <a href="soil-analysis.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Soil Analysis">Soil Analysis</a>
+                <a href="weather.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Weather">Weather</a>
+                <a href="crop-suggestions.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Crop Suggestions">Crop Suggestions</a>
+                <a href="market-prices.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Market Prices">Market Prices</a>
+                <a href="sarkari-yojana.html" class="nav-item text-gray-700 font-medium py-2 active" data-translate="Sarkari Yojana">Sarkari Yojana</a>
+                <a href="./community.html" class="nav-item text-gray-700 font-medium py-2" data-translate="Community">Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <h1 class="text-2xl font-bold mb-6" data-translate="Sarkari Yojana">Sarkari Yojana</h1>
+
+        <!-- Government Schemes Section -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden p-6">
+            <h2 class="text-xl font-semibold mb-4" data-translate="Government Schemes for Farmers">Government Schemes for Farmers</h2>
+            <p class="mb-4" data-translate="Explore various government schemes and portals dedicated to farmer welfare.">Explore various government schemes and portals dedicated to farmer welfare.</p>
+
+            <!-- Scheme Links -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="https://cacp.da.gov.in/" target="_blank" class="bg-blue-100 p-4 rounded-lg flex items-center justify-center text-center hover:bg-blue-200 transition-colors">
+                    <span class="font-medium text-blue-800" data-translate="CACP">Commission for Agricultural Costs & Prices (CACP)</span>
+                </a>
+                <a href="https://desagri.gov.in/en/statistics-type/latest-minimum-support-price-msp-statement/" target="_blank" class="bg-green-100 p-4 rounded-lg flex items-center justify-center text-center hover:bg-green-200 transition-colors">
+                    <span class="font-medium text-green-800" data-translate="Latest MSP Statement">Latest MSP Statement</span>
+                </a>
+                <a href="https://desagri.gov.in/wp-content/uploads/2023/06/English-notification-for-website-.pdf" target="_blank" class="bg-yellow-100 p-4 rounded-lg flex items-center justify-center text-center hover:bg-yellow-200 transition-colors">
+                    <span class="font-medium text-yellow-800" data-translate="MSP Notification (Kharif 2023-24)">MSP Notification (Kharif 2023-24)</span>
+                </a>
+                <a href="https://www.pib.gov.in/PressReleaseIfra" target="_blank" class="bg-red-100 p-4 rounded-lg flex items-center justify-center text-center hover:bg-red-200 transition-colors">
+                    <span class="font-medium text-red-800" data-translate="PIB Press Release (Kharif 2024-25)">PIB Press Release (Kharif 2024-25)</span>
+                </a>
+            </div>
+
+            <!-- Scheme Flashcards -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- PM-KISAN -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <img src="https://source.unsplash.com/random/400x200?farmer,india" alt="PM-KISAN" class="rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2" data-translate="PM-KISAN">PM-KISAN</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="₹6000/year direct income support">₹6000/year direct income support</p>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Paid in 3 installments">Paid in 3 installments</p>
+                    <p class="text-sm text-gray-600" data-translate="All small & marginal farmers">All small & marginal farmers</p>
+                </div>
+
+                <!-- PMFBY -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <img src="https://source.unsplash.com/random/400x200?crop,insurance" alt="PMFBY" class="rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2" data-translate="Pradhan Mantri Fasal Bima Yojana (PMFBY)">Pradhan Mantri Fasal Bima Yojana (PMFBY)</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Crop insurance scheme">Crop insurance scheme</p>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Covers losses from floods, droughts, pests">Covers losses from floods, droughts, pests</p>
+                    <p class="text-sm text-gray-600" data-translate="Farmers pay very low premium">Farmers pay very low premium</p>
+                </div>
+
+                <!-- e-NAM -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <img src="https://source.unsplash.com/random/400x200?market,agriculture" alt="e-NAM" class="rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2" data-translate="e-NAM (National Agriculture Market)">e-NAM (National Agriculture Market)</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Online mandi platform">Online mandi platform</p>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Sell crops nationwide">Sell crops nationwide</p>
+                    <p class="text-sm text-gray-600" data-translate="Better price discovery, fewer middlemen">Better price discovery, fewer middlemen</p>
+                </div>
+
+                <!-- KCC -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <img src="https://source.unsplash.com/random/400x200?credit,card" alt="KCC" class="rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2" data-translate="Kisan Credit Card (KCC)">Kisan Credit Card (KCC)</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Easy crop loans at low interest">Easy crop loans at low interest</p>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Covers seeds, fertilizer, equipment">Covers seeds, fertilizer, equipment</p>
+                    <p class="text-sm text-gray-600" data-translate="Repay after harvest">Repay after harvest</p>
+                </div>
+
+                <!-- PM Krishi Sinchayee Yojana -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <img src="https://source.unsplash.com/random/400x200?irrigation,water" alt="PM Krishi Sinchayee Yojana" class="rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2" data-translate="PM Krishi Sinchayee Yojana">PM Krishi Sinchayee Yojana</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Promotes irrigation efficiency">Promotes irrigation efficiency</p>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="“Har Khet Ko Pani” (Water for Every Field)">“Har Khet Ko Pani” (Water for Every Field)</p>
+                    <p class="text-sm text-gray-600" data-translate="Drip & sprinkler system subsidies">Drip & sprinkler system subsidies</p>
+                </div>
+
+                <!-- FPO -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <img src="https://source.unsplash.com/random/400x200?farmers,group" alt="FPO" class="rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2" data-translate="FPO (Farmer Producer Organisations)">FPO (Farmer Producer Organisations)</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Farmers form groups/cooperatives">Farmers form groups/cooperatives</p>
+                    <p class="text-sm text-gray-600 mb-2" data-translate="Get better bargaining power">Get better bargaining power</p>
+                    <p class="text-sm text-gray-600" data-translate="Govt support for storage, marketing">Govt support for storage, marketing</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">AgriVigyan Portal</h3>
+                    <p class="text-gray-400 text-sm">Empowering farmers with data-driven agriculture for a sustainable future.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Dashboard</a></li>
+                        <li><a href="soil-analysis.html" class="text-gray-400 hover:text-white transition-colors">Soil Analysis</a></li>
+                        <li><a href="crop-suggestions.html" class="text-gray-400 hover:text-white transition-colors">Crop Suggestions</a></li>
+                        <li><a href="market-prices.html" class="text-gray-400 hover:text-white transition-colors">Market Prices</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Feedback</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.232-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H11v7H9v-7H7v-2h2V8.231C9 6.775 9.923 6 11.538 6H13v2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.344 7.749a2.988 2.988 0 0 1 2.134 2.134c.178.818.178 1.665.178 2.523 0 .858 0 1.705-.178 2.523a2.988 2.988 0 0 1-2.134 2.134c-.818.178-1.665.178-2.523-.178h-7.641c-.858 0-1.705 0-2.523-.178a2.988 2.988 0 0 1-2.134-2.134c-.178-.818-.178-1.665-.178-2.523 0-.858 0-1.705.178-2.523a2.988 2.988 0 0 1 2.134-2.134c.818-.178 1.665-.178 2.523-.178h7.641c.858 0 1.705 0 2.523.178zm-6.344 8.249c1.239 0 2.244-1.006 2.244-2.246S13.239 11.507 12 11.507s-2.244 1.005-2.244 2.246S10.761 16 12 16zm4.368-7.587a1.282 1.282 0 0 1 .734-1.281 1.3 1.3 0 0 1 1.421.15c.28.22.44.54.435.877a1.3 1.3 0 0 1-.435.874 1.287 1.287 0 0 1-.874.435 1.3 1.3 0 0 1-1.281-.734c-.107-.211-.162-.446-.162-.688 0-.243.055-.476.162-.684z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script src="./js/translator.js"></script>
+</body>
+</html>

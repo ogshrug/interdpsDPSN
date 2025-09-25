@@ -2,8 +2,8 @@
 function initMap() {
     // Map options - centered on India
     const mapOptions = {
-        center: { lat: 20.5937, lng: 78.9629 },
-        zoom: 5,
+        center: { lat: 28.5723, lng: 77.3239 },
+        zoom: 15,
         styles: [
             {
                 featureType: "administrative",
@@ -39,22 +39,22 @@ function initMap() {
     // Sample field data
     const fields = [
         {
-            name: "North Field",
-            position: { lat: 30.736617, lng: 76.732806 },
+            name: "Field A (Noida)",
+            position: { lat: 28.5720, lng: 77.3230 },
             status: "optimal",
-            data: { moisture: "72%", ph: "6.2", nitrogen: "84%" }
+            data: { moisture: "65%", ph: "7.1", nitrogen: "75%" }
         },
         {
-            name: "South Field",
-            position: { lat: 30.823660152069277, lng: 76.80218261716912 },
-            status: "critical",
-            data: { moisture: "32%", ph: "5.1", nitrogen: "68%" }
-        },
-        {
-            name: "East Field",
-            position: { lat: 30.78711979129328, lng: 76.67211376466285 },
+            name: "Field B (Noida)",
+            position: { lat: 28.5735, lng: 77.3255 },
             status: "moderate",
-            data: { moisture: "45%", ph: "5.8", nitrogen: "91%" }
+            data: { moisture: "55%", ph: "6.8", nitrogen: "60%" }
+        },
+        {
+            name: "Field C (Noida)",
+            position: { lat: 28.5710, lng: 77.3260 },
+            status: "critical",
+            data: { moisture: "40%", ph: "7.5", nitrogen: "45%" }
         }
     ];
 
