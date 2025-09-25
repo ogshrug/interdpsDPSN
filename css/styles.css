@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary: #2B9348;
-    --primary-light: #80B918;
-    --secondary: #FF9E1B;
-    --tertiary: #8B5E34;
+    --primary: #606d42;
+    --primary-light: #475933;
+    --secondary: #ba9642;
+    --tertiary: #795839;
+    --accent: #deba5c;
     --dark: #1E1E1E;
-    --light: #F8F9FA;
+    --light: #eff4ed;
 }
 
 body {
     font-family: 'Poppins', 'Noto Sans Gurmukhi', sans-serif;
-    background-color: #f5f7fa;
+    background-color: var(--light);
     color: var(--dark);
 }
 
@@ -101,6 +102,26 @@ input[type="range"]::-webkit-slider-thumb {
 
 .tab-content:not(.active) {
     display: none;
+}
+
+.btn {
+    background-color: var(--primary);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-light);
+}
+
+.trend-up {
+    background-color: #d9e6d4;
+    color: #475933;
+}
+
+.trend-down {
+    background-color: #fce9e8;
+    color: #D62828;
 }
 
 /* Mobile responsiveness */
@@ -207,7 +228,7 @@ input[type="range"]::-webkit-slider-thumb {
 /* Loader for connection status */
 .loader {
     border: 6px solid #f3f3f3;
-    border-top: 6px solid #2B9348;
+    border-top: 6px solid var(--primary);
     border-radius: 50%;
     width: 60px;
     height: 60px;
